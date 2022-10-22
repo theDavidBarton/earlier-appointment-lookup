@@ -20,4 +20,9 @@ jobs:
       - name: Install project
         run: yarn
       - name: Run main script
+        env:
+          TARGET_URL: ${{ secrets.TARGET_URL }}
+          SENDER_EMAIL_USERNAME: ${{ secrets.SENDER_EMAIL_USERNAME }}
+          SENDER_EMAIL_PASSWORD: ${{ secrets.SENDER_EMAIL_PASSWORD }}
+          RECEIVER_EMAIL_USERNAME: ${{ secrets.RECEIVER_EMAIL_USERNAME }}
         run: node index.js
