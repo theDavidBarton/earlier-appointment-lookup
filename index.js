@@ -25,7 +25,7 @@ const runScrape = async () => {
     const mailOptions = {
       from: process.env.SENDER_EMAIL_USERNAME,
       to: process.env.RECEIVER_EMAIL_USERNAME,
-      subject: 'An earlier appointment has become availble on ' + availableDatesFormatted[0],
+      subject: 'An earlier appointment has become available on ' + availableDatesFormatted[0],
       text: `Hi, 
       
       Your followed appointment got an earlier available date:
