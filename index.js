@@ -9,8 +9,8 @@ const runScrape = async () => {
   const availableDates = await page.$$eval('.closest_cal button', dates =>
     dates.map(el => Date.parse(el.innerText)).filter(Boolean)
   )
-  const isThereEarlier = availableDates.some(date => date < 1668614400000) // 11/16/2022, 5:00:00 PM
-  console.log('IS THERE AN APPOINTMENT EARLIER THAN 11/16/2022, 5:00:00 PM: ' + isThereEarlier)
+  const isThereEarlier = availableDates.some(date => date < 1759948800000) // 2025-06-11 at 10:00 AM (CET/CEST)
+  console.log('IS THERE AN APPOINTMENT EARLIER THAN 2025-06-11 at 10:00 AM: ' + isThereEarlier)
   const availableDatesFormatted = availableDates.map(el => new Date(el).toLocaleString())
   console.log(availableDatesFormatted)
   if (isThereEarlier) {
